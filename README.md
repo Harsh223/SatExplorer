@@ -23,7 +23,7 @@ SatExplorer is a Streamlit-based web application for exploring and analyzing the
 ### Installation
 1. Clone the repository:
    ```sh
-   git clone https://github.com/yourusername/SatExplorer.git
+   git clone https://github.com/Harsh223/SatExplorer.git
    cd SatExplorer
    ```
 2. Install dependencies:
