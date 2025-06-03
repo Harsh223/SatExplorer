@@ -2,6 +2,8 @@
 
 SatExplorer is a Streamlit-based web application for exploring and analyzing the Satellite Catalog (SATCAT) dataset. It provides interactive visualizations, advanced filtering, and custom analysis tools for satellite data.
 
+**Live Demo:** The code is also hosted at [https://satexplorer.streamlit.app/](https://satexplorer.streamlit.app/) thanks to Streamlit Community Cloud.
+
 ## Features
 - Overview and statistics of the SATCAT dataset
 - Satellite type analysis
