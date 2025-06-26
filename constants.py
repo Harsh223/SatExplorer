@@ -5,6 +5,7 @@ TAB_NAMES = [
     "Raw Data Table",
     "Help / Glossary",
     "Satellite Size & Launch Trends",
+    "Publication Figures",
     "Custom Analysis & Visualization",
     "Data Source"
 ]

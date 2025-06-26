@@ -23,8 +23,10 @@ def get_date_confidence(ldate):
 
 def size_class(mass):
     if pd.isna(mass): return 'Unknown'
-    if mass <= 16: return 'CubeSat'
-    if mass <= 100: return 'MicroSat'
-    if mass <= 500: return 'SmallSat'
-    if mass <= 1000: return 'MediumSat'
-    return 'LargeSat'
+    if mass < 1: return 'Femtosatellite'
+    if mass <= 10: return 'Picosatellite'
+    if mass <= 100: return 'Nanosatellite'
+    if mass <= 1000: return 'Microsatellite'
+    if mass <= 5000: return 'Small Satellite'
+    if mass <= 10000: return 'Medium Satellite'
+    return 'Large Satellite'

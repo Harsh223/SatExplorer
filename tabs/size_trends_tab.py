@@ -7,12 +7,14 @@ def render_tab(df):
     st.info("""
     Explore launches by satellite size, launch provider, and orbit class. Use the sliders to set the time range.
     
-    **Size classes:**
-    - CubeSat: 1-16 kg
-    - MicroSat: 16-100 kg
-    - SmallSat: 100-500 kg
-    - MediumSat: 500-1000 kg
-    - LargeSat: >1000 kg
+    **International Standard Size Classes:**
+    - Femtosatellite: 0.1-1 kg
+    - Picosatellite: 1-10 kg (includes CubeSats)
+    - Nanosatellite: 10-100 kg
+    - Microsatellite: 100-1000 kg
+    - Small Satellite: 1000-5000 kg
+    - Medium Satellite: 5000-10000 kg
+    - Large Satellite: >10000 kg
     """)
     coarse_types_all = df['CoarseType'].dropna().unique().tolist() if 'CoarseType' in df.columns else []
     default_coarse = ['P'] if 'P' in coarse_types_all else coarse_types_all
@@ -28,11 +30,13 @@ def render_tab(df):
             df_time = df_time[df_time['CoarseType'].isin(selected_coarse)]
         def size_class(mass):
             if pd.isna(mass): return 'Unknown'
-            if mass <= 16: return 'CubeSat'
-            if mass <= 100: return 'MicroSat'
-            if mass <= 500: return 'SmallSat'
-            if mass <= 1000: return 'MediumSat'
-            return 'LargeSat'
+            if mass < 1: return 'Femtosatellite'
+            if mass <= 10: return 'Picosatellite'
+            if mass <= 100: return 'Nanosatellite'
+            if mass <= 1000: return 'Microsatellite'
+            if mass <= 5000: return 'Small Satellite'
+            if mass <= 10000: return 'Medium Satellite'
+            return 'Large Satellite'
         df_time = df_time.copy()
         df_time['SizeClass'] = df_time['Mass'].apply(size_class)
         st.subheader("1. Satellites Launched by Size Class (per Year)")

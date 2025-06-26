@@ -15,6 +15,7 @@ def import_tab_renderers():
     from tabs.raw_data_tab import render_tab as render_raw_data
     from tabs.help_tab import render_tab as render_help
     from tabs.size_trends_tab import render_tab as render_size_trends
+    from tabs.report_plots_tab import render_tab as render_report_plots
     from tabs.custom_analysis_tab import render_tab as render_custom_analysis
     from tabs.data_source_tab import render_tab as render_data_source
     return [
@@ -24,6 +25,7 @@ def import_tab_renderers():
         render_raw_data,
         render_help,
         render_size_trends,
+        render_report_plots,
         render_custom_analysis,
         render_data_source
     ]
